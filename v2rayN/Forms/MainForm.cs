@@ -57,12 +57,6 @@ namespace v2rayN.Forms
             RefreshServers();
 
             LoadV2ray();
-
-            //自动从网络同步本地时间
-            if (config.autoSyncTime)
-            {
-                //CDateTime.SetLocalTime();
-            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

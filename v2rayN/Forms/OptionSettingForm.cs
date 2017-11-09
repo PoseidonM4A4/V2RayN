@@ -78,10 +78,7 @@ namespace v2rayN.Forms
         {
             //开机自动启动
             chkAutoRun.Checked = config.autoRun;
-
-            //自动从网络同步本地时间
-            chkAutoSyncTime.Checked = config.autoSyncTime;
-
+            
             //自定义GFWList
             txturlGFWList.Text = config.urlGFWList;
 
@@ -231,9 +228,6 @@ namespace v2rayN.Forms
                 Utils.RunAsAdmin(chkAutoRun.Checked ? "--enable-autorun" : "--disable-autorun");
                 config.autoRun = chkAutoRun.Checked;
             }
-
-            //自动从网络同步本地时间
-            config.autoSyncTime = chkAutoSyncTime.Checked;
             
             //自定义GFWList
             config.urlGFWList = txturlGFWList.Text.Trim();

@@ -69,7 +69,6 @@
             this.chkBypassChinaip = new System.Windows.Forms.CheckBox();
             this.txturlGFWList = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.chkAutoSyncTime = new System.Windows.Forms.CheckBox();
             this.chkAutoRun = new System.Windows.Forms.CheckBox();
             label5 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -481,7 +480,6 @@
             groupBoxV2RaySetting.Controls.Add(this.txturlGFWList);
             groupBoxV2RaySetting.Controls.Add(this.label13);
             groupBoxV2RaySetting.Controls.Add(label12);
-            groupBoxV2RaySetting.Controls.Add(this.chkAutoSyncTime);
             groupBoxV2RaySetting.Controls.Add(this.chkAutoRun);
             groupBoxV2RaySetting.Location = new System.Drawing.Point(12, 12);
             groupBoxV2RaySetting.Name = "groupBoxV2RaySetting";
@@ -515,17 +513,6 @@
             label12.Size = new System.Drawing.Size(322, 42);
             label12.TabIndex = 31;
             label12.Text = "*启用系统代理:\r\n全局模式:端口=socks端口+1\r\nPAC 模式:端口=socks端口+2;优先级PAC > v2ray路由";
-            // 
-            // chkAutoSyncTime
-            // 
-            this.chkAutoSyncTime.AutoSize = true;
-            this.chkAutoSyncTime.Location = new System.Drawing.Point(115, 25);
-            this.chkAutoSyncTime.Name = "chkAutoSyncTime";
-            this.chkAutoSyncTime.Size = new System.Drawing.Size(276, 16);
-            this.chkAutoSyncTime.TabIndex = 30;
-            this.chkAutoSyncTime.Text = "启动时自动从网络同步本地时间(可能会不成功)";
-            this.chkAutoSyncTime.UseVisualStyleBackColor = true;
-            this.chkAutoSyncTime.Visible = false;
             // 
             // chkAutoRun
             // 
@@ -602,7 +589,6 @@
         private System.Windows.Forms.CheckBox chkBypassChinaip;
         private System.Windows.Forms.TextBox txturlGFWList;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox chkAutoSyncTime;
         private System.Windows.Forms.CheckBox chkAutoRun;
     }
 }
