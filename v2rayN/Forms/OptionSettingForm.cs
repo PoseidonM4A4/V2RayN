@@ -89,7 +89,7 @@ namespace v2rayN.Forms
         private void InitGUI()
         {
             //开机自动启动
-            chkAutoRun.Checked = Utils.IsAutoRun();
+            chkAutoRun.Checked = config.autoRun;
 
             //自动从网络同步本地时间
             chkAutoSyncTime.Checked = config.autoSyncTime;
@@ -270,7 +270,8 @@ namespace v2rayN.Forms
         private int SaveGUI()
         {
             //开机自动启动
-            Utils.SetAutoRun(chkAutoRun.Checked);
+            Utils.RunAsAdmin(chkAutoRun.Checked ? "--enable-autorun" : "--disable-autorun");
+            config.autoRun = chkAutoRun.Checked;
 
             //自动从网络同步本地时间
             config.autoSyncTime = chkAutoSyncTime.Checked;
@@ -290,6 +291,7 @@ namespace v2rayN.Forms
         {
             chkAllowIn2State();
         }
+
         private void chkAllowIn2State()
         {
             bool blAllow2 = chkAllowIn2.Checked;

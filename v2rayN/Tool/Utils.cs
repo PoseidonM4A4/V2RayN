@@ -208,7 +208,6 @@ namespace v2rayN
 
         #endregion
 
-
         #region 数据检查
 
         /// <summary>
@@ -328,30 +327,9 @@ namespace v2rayN
             }
             catch
             {
+                return -1;
             }
             return 0;
-        }
-
-        /// <summary>
-        /// 是否已经设置开机自动启动
-        /// </summary>
-        /// <returns></returns>
-        public static bool IsAutoRun()
-        {
-            try
-            {
-                RegistryKey regKey = Registry.LocalMachine.CreateSubKey(autoRunRegPath);
-                string value = regKey.GetValue(autoRunName).ToString();
-                string exePath = GetExePath();
-                if (value.Equals(exePath))
-                {
-                    return true;
-                }
-            }
-            catch
-            {
-            }
-            return false;
         }
 
         /// <summary>
@@ -381,6 +359,35 @@ namespace v2rayN
         public static string GetExePath()
         {
             return System.Windows.Forms.Application.ExecutablePath;
+        }
+
+        /// <summary>
+        /// 以管理员身份运行程序
+        /// Copy from Shadowsocks-Csharp
+        /// </summary>
+        /// <param name="args">运行参数</param>
+        public static int RunAsAdmin(string Arguments)
+        {
+            Process process = null;
+            ProcessStartInfo processInfo = new ProcessStartInfo();
+            processInfo.Verb = "runas";
+            processInfo.FileName = Application.ExecutablePath;
+            processInfo.Arguments = Arguments;
+            try
+            {
+                process = Process.Start(processInfo);
+            }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                return -1;
+            }
+            if (process != null)
+            {
+                process.WaitForExit();
+            }
+            int ret = process.ExitCode;
+            process.Close();
+            return ret;
         }
 
         #endregion

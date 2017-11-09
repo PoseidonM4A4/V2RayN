@@ -13,10 +13,23 @@ namespace v2rayN
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
+        /// <param name="args"></param>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
+            string firstArgument = args.Length > 0 ? args[0] : String.Empty;
+            if (firstArgument == "--enable-autorun")
+            {
+                int result = Utils.SetAutoRun(true);
+                Environment.Exit(result);
+            } 
+            else if (firstArgument == "--disable-autorun")
+            {
+                int result = Utils.SetAutoRun(false);
+                Environment.Exit(result);
+            }
 
             Process instance = RunningInstance();
             if (instance == null)

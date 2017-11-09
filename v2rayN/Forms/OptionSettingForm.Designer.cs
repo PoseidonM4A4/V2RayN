@@ -613,9 +613,9 @@
             this.chkAutoRun.AutoSize = true;
             this.chkAutoRun.Location = new System.Drawing.Point(15, 16);
             this.chkAutoRun.Name = "chkAutoRun";
-            this.chkAutoRun.Size = new System.Drawing.Size(180, 16);
+            this.chkAutoRun.Size = new System.Drawing.Size(96, 16);
             this.chkAutoRun.TabIndex = 23;
-            this.chkAutoRun.Text = "开机自动启动(可能会不成功)";
+            this.chkAutoRun.Text = "开机自动启动";
             this.chkAutoRun.UseVisualStyleBackColor = true;
             // 
             // panel2
