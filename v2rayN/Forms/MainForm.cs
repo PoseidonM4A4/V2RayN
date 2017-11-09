@@ -456,7 +456,6 @@ namespace v2rayN.Forms
 
         #endregion
 
-
         #region 提示信息
 
         /// <summary>
@@ -525,7 +524,6 @@ namespace v2rayN.Forms
         }
 
         #endregion
-
 
         #region 托盘事件
 
@@ -650,7 +648,6 @@ namespace v2rayN.Forms
 
         #region PAC相关
 
-
         private void menuUpdatePACList_Click(object sender, EventArgs e)
         {
             pacListHandle.UpdatePACFromGFWList(config);
@@ -736,6 +733,9 @@ namespace v2rayN.Forms
         }
         #endregion
 
-
+        private void menuOptions_Click(object sender, EventArgs e)
+        {
+            tsbOptionSetting_Click(sender, e);
+        }
     }
 }
