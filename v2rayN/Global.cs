@@ -22,9 +22,14 @@ namespace v2rayN
         public const string ConfigFileName = "guiNConfig.json";
 
         /// <summary>
+        /// v2ray所在文件夹
+        /// </summary>
+        public const string v2rayBinaryFolderPath = @".\core";
+
+        /// <summary>
         /// v2ray配置文件名
         /// </summary>
-        public const string v2rayConfigFileName = "config.json";
+        public const string v2rayConfigFileName = v2rayBinaryFolderPath + @"\config.json";
 
         /// <summary>
         /// v2ray客户端配置样例文件名

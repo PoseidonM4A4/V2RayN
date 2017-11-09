@@ -20,14 +20,17 @@ namespace v2rayN.Handler
     class V2rayHandler
     {
         private static string v2rayConfigRes = Global.v2rayConfigFileName;
+        private static string v2rayBinaryFolderPath = Global.v2rayBinaryFolderPath;
         private List<string> lstV2ray;
         public event ProcessDelegate ProcessEvent;
 
         public V2rayHandler()
         {
-            lstV2ray = new List<string>();
-            lstV2ray.Add("wv2ray");
-            lstV2ray.Add("v2ray");
+            lstV2ray = new List<string>
+            {
+                "wv2ray",
+                "v2ray"
+            };
         }
 
         /// <summary>
@@ -94,7 +97,8 @@ namespace v2rayN.Handler
                 string fileName = string.Empty;
                 for (int k = 0; k < lstV2ray.Count; k++)
                 {
-                    string vName = string.Format("{0}.exe", lstV2ray[k]);
+                    string vName = string.Format("{0}\\{1}.exe", v2rayBinaryFolderPath, lstV2ray[k]);
+
                     vName = Utils.GetPath(vName);
                     if (File.Exists(vName))
                     {

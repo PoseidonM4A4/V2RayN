@@ -360,6 +360,11 @@ namespace v2rayN
         /// <returns></returns>
         public static string GetPath(string fileName)
         {
+            if (Path.IsPathRooted(fileName))
+            {
+                return fileName;
+            }
+
             string StartupPath = Application.StartupPath;
             if (Utils.IsNullOrEmpty(fileName))
             {
