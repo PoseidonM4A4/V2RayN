@@ -226,8 +226,11 @@ namespace v2rayN.Forms
         private int SaveGUI()
         {
             //开机自动启动
-            Utils.RunAsAdmin(chkAutoRun.Checked ? "--enable-autorun" : "--disable-autorun");
-            config.autoRun = chkAutoRun.Checked;
+            if (config.autoRun != chkAutoRun.Checked)
+            {
+                Utils.RunAsAdmin(chkAutoRun.Checked ? "--enable-autorun" : "--disable-autorun");
+                config.autoRun = chkAutoRun.Checked;
+            }
 
             //自动从网络同步本地时间
             config.autoSyncTime = chkAutoSyncTime.Checked;
