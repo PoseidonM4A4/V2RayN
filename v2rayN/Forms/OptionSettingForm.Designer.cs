@@ -33,11 +33,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkmuxEnabled = new System.Windows.Forms.CheckBox();
-            this.chkAllowIn2 = new System.Windows.Forms.CheckBox();
-            this.chkudpEnabled2 = new System.Windows.Forms.CheckBox();
-            this.cmbprotocol2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtlocalPort2 = new System.Windows.Forms.TextBox();
             this.cmbprotocol = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chkudpEnabled = new System.Windows.Forms.CheckBox();
@@ -133,11 +128,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.chkmuxEnabled);
-            this.groupBox1.Controls.Add(this.chkAllowIn2);
-            this.groupBox1.Controls.Add(this.chkudpEnabled2);
-            this.groupBox1.Controls.Add(this.cmbprotocol2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtlocalPort2);
             this.groupBox1.Controls.Add(this.cmbprotocol);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.chkudpEnabled);
@@ -162,60 +152,6 @@
             this.chkmuxEnabled.TabIndex = 20;
             this.chkmuxEnabled.Text = "开启Mux多路复用(默认开启)";
             this.chkmuxEnabled.UseVisualStyleBackColor = true;
-            // 
-            // chkAllowIn2
-            // 
-            this.chkAllowIn2.AutoSize = true;
-            this.chkAllowIn2.Location = new System.Drawing.Point(15, 63);
-            this.chkAllowIn2.Name = "chkAllowIn2";
-            this.chkAllowIn2.Size = new System.Drawing.Size(102, 16);
-            this.chkAllowIn2.TabIndex = 19;
-            this.chkAllowIn2.Text = "本地监听端口2";
-            this.chkAllowIn2.UseVisualStyleBackColor = true;
-            this.chkAllowIn2.Visible = false;
-            this.chkAllowIn2.CheckedChanged += new System.EventHandler(this.chkAllowIn2_CheckedChanged);
-            // 
-            // chkudpEnabled2
-            // 
-            this.chkudpEnabled2.AutoSize = true;
-            this.chkudpEnabled2.Location = new System.Drawing.Point(369, 62);
-            this.chkudpEnabled2.Name = "chkudpEnabled2";
-            this.chkudpEnabled2.Size = new System.Drawing.Size(66, 16);
-            this.chkudpEnabled2.TabIndex = 18;
-            this.chkudpEnabled2.Text = "开启UDP";
-            this.chkudpEnabled2.UseVisualStyleBackColor = true;
-            this.chkudpEnabled2.Visible = false;
-            // 
-            // cmbprotocol2
-            // 
-            this.cmbprotocol2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbprotocol2.FormattingEnabled = true;
-            this.cmbprotocol2.Items.AddRange(new object[] {
-            "socks",
-            "http"});
-            this.cmbprotocol2.Location = new System.Drawing.Point(257, 60);
-            this.cmbprotocol2.Name = "cmbprotocol2";
-            this.cmbprotocol2.Size = new System.Drawing.Size(97, 20);
-            this.cmbprotocol2.TabIndex = 17;
-            this.cmbprotocol2.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(217, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "协议";
-            this.label3.Visible = false;
-            // 
-            // txtlocalPort2
-            // 
-            this.txtlocalPort2.Location = new System.Drawing.Point(124, 60);
-            this.txtlocalPort2.Name = "txtlocalPort2";
-            this.txtlocalPort2.Size = new System.Drawing.Size(78, 21);
-            this.txtlocalPort2.TabIndex = 14;
-            this.txtlocalPort2.Visible = false;
             // 
             // cmbprotocol
             // 
@@ -372,7 +308,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(500, 352);
+            this.tabPage4.Size = new System.Drawing.Size(500, 349);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "  直连的网址或IP  ";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -384,7 +320,7 @@
             this.txtUserdirect.Multiline = true;
             this.txtUserdirect.Name = "txtUserdirect";
             this.txtUserdirect.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtUserdirect.Size = new System.Drawing.Size(494, 346);
+            this.txtUserdirect.Size = new System.Drawing.Size(494, 343);
             this.txtUserdirect.TabIndex = 1;
             // 
             // tabPage5
@@ -393,7 +329,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(500, 352);
+            this.tabPage5.Size = new System.Drawing.Size(500, 349);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "  阻止的网址或IP  ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -405,7 +341,7 @@
             this.txtUserblock.Multiline = true;
             this.txtUserblock.Name = "txtUserblock";
             this.txtUserblock.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtUserblock.Size = new System.Drawing.Size(494, 346);
+            this.txtUserblock.Size = new System.Drawing.Size(494, 343);
             this.txtUserblock.TabIndex = 1;
             // 
             // chkBypassChinasites
@@ -687,14 +623,6 @@
 
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbloglevel;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtlocalPort;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox chklogEnabled;
-        private System.Windows.Forms.CheckBox chkudpEnabled;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -702,14 +630,6 @@
         private System.Windows.Forms.CheckBox chkBypassChinasites;
         private System.Windows.Forms.CheckBox chkBypassChinaip;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cmbprotocol;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbprotocol2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtlocalPort2;
-        private System.Windows.Forms.CheckBox chkudpEnabled2;
-        private System.Windows.Forms.CheckBox chkAllowIn2;
-        private System.Windows.Forms.CheckBox chkmuxEnabled;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
@@ -738,5 +658,16 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txturlGFWList;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chkmuxEnabled;
+        private System.Windows.Forms.ComboBox cmbprotocol;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkudpEnabled;
+        private System.Windows.Forms.CheckBox chklogEnabled;
+        private System.Windows.Forms.ComboBox cmbloglevel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtlocalPort;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

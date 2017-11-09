@@ -40,18 +40,6 @@ namespace v2rayN.Forms
                 txtlocalPort.Text = config.inbound[0].localPort.ToString();
                 cmbprotocol.Text = config.inbound[0].protocol.ToString();
                 chkudpEnabled.Checked = config.inbound[0].udpEnabled;
-                if (config.inbound.Count > 1)
-                {
-                    txtlocalPort2.Text = config.inbound[1].localPort.ToString();
-                    cmbprotocol2.Text = config.inbound[1].protocol.ToString();
-                    chkudpEnabled2.Checked = config.inbound[1].udpEnabled;
-                    chkAllowIn2.Checked = true;
-                }
-                else
-                {
-                    chkAllowIn2.Checked = false;
-                }
-                chkAllowIn2State();
             }
         }
 
@@ -162,38 +150,6 @@ namespace v2rayN.Forms
             config.inbound[0].protocol = protocol;
             config.inbound[0].udpEnabled = udpEnabled;
 
-            //本地监听2
-            string localPort2 = txtlocalPort2.Text.Trim();
-            string protocol2 = cmbprotocol2.Text.Trim();
-            bool udpEnabled2 = chkudpEnabled2.Checked;
-            if (chkAllowIn2.Checked)
-            {
-                if (Utils.IsNullOrEmpty(localPort2) || !Utils.IsNumberic(localPort2))
-                {
-                    UI.Show("请填写本地监听端口2");
-                    return -1;
-                }
-                if (Utils.IsNullOrEmpty(protocol2))
-                {
-                    UI.Show("请选择协议2");
-                    return -1;
-                }
-                if (config.inbound.Count < 2)
-                {
-                    config.inbound.Add(new Mode.InItem());
-                }
-                config.inbound[1].localPort = Convert.ToInt32(localPort2);
-                config.inbound[1].protocol = protocol2;
-                config.inbound[1].udpEnabled = udpEnabled2;
-            }
-            else
-            {
-                if (config.inbound.Count > 1)
-                {
-                    config.inbound.RemoveAt(1);
-                }
-            }
-
             //日志     
             config.logEnabled = logEnabled;
             config.loglevel = loglevel;
@@ -285,19 +241,6 @@ namespace v2rayN.Forms
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void chkAllowIn2_CheckedChanged(object sender, EventArgs e)
-        {
-            chkAllowIn2State();
-        }
-
-        private void chkAllowIn2State()
-        {
-            bool blAllow2 = chkAllowIn2.Checked;
-            txtlocalPort2.Enabled =
-            cmbprotocol2.Enabled =
-            chkudpEnabled2.Enabled = blAllow2;
         }
     }
 }
