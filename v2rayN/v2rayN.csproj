@@ -72,15 +72,11 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, PublicKeyToken=e8a75d24b142be49, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Gma.QrCodeNet.Encoding.dll</HintPath>
-      <Private>False</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+    <Reference Include="Gma.QrCodeNet.Encoding">
+      <HintPath>Library\Gma.QrCodeNet.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>.\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>Library\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -201,7 +197,7 @@
     <EmbeddedResource Include="Sample\SampleClientConfig.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Newtonsoft.Json.dll" />
+    <EmbeddedResource Include="Library\Newtonsoft.Json.dll" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Sample\SampleHttprequest.txt" />
@@ -247,7 +243,7 @@
     <None Include="Resources\minimize.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Gma.QrCodeNet.Encoding.dll" />
+    <EmbeddedResource Include="Library\Gma.QrCodeNet.Encoding.dll" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\privoxy_conf.txt" />
